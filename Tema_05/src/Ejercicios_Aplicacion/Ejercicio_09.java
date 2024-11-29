@@ -99,15 +99,15 @@ public class Ejercicio_09 {
         }
     
     public static void ganadores(int[] t){
-        int[] podio = new int[3];
-        int cont = 0;
-        for(int i = 0; i < 3; i++){
-            podio[cont] = t[i];
-            cont++;
+        if(t.length >= 1){
+            System.out.println("El ganador de la medalla de oro es el dorsal " + t[0]);
         }
-        System.out.println("El ganador de la medalla de oro es el dorsal " + podio[0]);
-        System.out.println("El ganador de la medalla de plata es el dorsal " + podio[1]);
-        System.out.println("El ganador de la medalla de bronce es el dorsal " + podio[2]);
+        if(t.length >= 2){
+            System.out.println("El ganador de la medalla de plata es el dorsal " + t[1]);
+        }
+        if(t.length >= 3){
+            System.out.println("El ganador de la medalla de bronce es el dorsal " + t[2]);
+        }
     }
     
 }
