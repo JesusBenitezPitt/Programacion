@@ -5,6 +5,7 @@
 package Clase;
 
 import java.util.Arrays;
+import java.lang.*;
 import java.util.Scanner;
 
 /**
@@ -18,13 +19,14 @@ public class Eliminacion_desordenada {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] v = crearVector();
+        int[] v = {1, 3, 5, 9, 4, 7, 10 , 2, 6, 8};
         mostrarVector(v);
         System.out.print("Escribe el numero que quieres borrar: ");
         int num_borrar = sc.nextInt();
         eliminacion(v, num_borrar);
     }
     
+    /*
     public static int[] crearVector(){
         int t[] = new int[10];
         for(int i = 0; i < t.length; i++){
@@ -32,6 +34,7 @@ public class Eliminacion_desordenada {
         }
         return (t);
     }
+    */
     
     public static void mostrarVector(int[] t){
         System.out.println(Arrays.toString(t));
@@ -60,7 +63,7 @@ public class Eliminacion_desordenada {
         if(indice == -1){
             System.out.println("No se ha encontrado el numero en el vector.");
         } else {
-            v[indice] = v[v.length -1];
+            System.arraycopy(v, indice + 1, v, indice, v.length-1-indice);
             v = Arrays.copyOf(v, v.length -1);
         }
         mostrarVector(v);

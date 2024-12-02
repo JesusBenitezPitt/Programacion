@@ -33,7 +33,6 @@ public class Ejercicio_09 {
         menores(participantes, sc);
         dopaje(participantes, sc);
         sinpagar(participantes, sc);
-        System.out.println(Arrays.toString(participantes));
         ganadores(participantes);
     }
     
@@ -59,7 +58,7 @@ public class Ejercicio_09 {
     }
     
     public static void dopaje(int[] t, Scanner sc){
-        int dopaje = 0, pos;
+        int dopaje = 0;
         boolean encontrado = false;
         while(dopaje != -1){
             System.out.print("Introduce los dorsales de todos los participantes que han dado positivo (-1 para terminar): ");
@@ -67,11 +66,7 @@ public class Ejercicio_09 {
             if(dopaje != -1){
                 for(int i = 0; i < t.length && !encontrado; i++){
                     if(t[i] == dopaje){
-                        pos = i;
-                        for(int j = pos; j < t.length && j != t.length - 1; j++){
-                            t[j] = t[j+1];
-                        }
-                        encontrado = true;
+                        System.arraycopy(t, i+1, t, i, t.length-1-i);
                         int[] t2 = Arrays.copyOf(t, t.length - 1);
                         t = t2;
                     }
