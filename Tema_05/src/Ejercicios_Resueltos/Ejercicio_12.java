@@ -23,13 +23,14 @@ public class Ejercicio_12 {
                 tabla1[i][j] = 10 * i + j;
             }
         }
+        System.out.println();
         for(int i = 0; i < 5; i++){
             for(int j = 0; j < 5; j++){
                 System.out.print(tabla1[i][j] + ", ");
             }
             System.out.println();
         }
-        
+        System.out.println();
         for(int i = 0; i < 5; i++){
             for(int j = 0; j < 5; j++){
                 suma += tabla1[i][j];
@@ -37,7 +38,7 @@ public class Ejercicio_12 {
             System.out.println("Suma de la fila " + i + ": " + suma);
             suma = 0;
         }
-        
+        System.out.println();
         for(int i = 0; i < 5; i++){
             for(int j = 0; j < 5; j++){
                 suma += tabla1[j][i];
