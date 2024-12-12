@@ -117,7 +117,11 @@ public class TresEnRaya {
                     ganado = true;
                     System.out.println("El jugador 2 gana.");
                 }
-            } else if(t[0][i] == t[1][i] && t[1][i] == t[2][i]){
+            }
+        }
+        
+        for(int i = 0; i < 3 && !ganado; i++){
+            if(t[0][i] == t[1][i] && t[1][i] == t[2][i]){
                 if(t[0][i] == 'x'){
                     ganado = true;
                     System.out.println("El jugador 1 gana.");
@@ -125,23 +129,25 @@ public class TresEnRaya {
                     ganado = true;
                     System.out.println("El jugador 2 gana.");
                 }
-            } else if(t[0][0] == t[1][1] && t[1][1] == t[2][2]){
-                if(t[0][0] == 'x'){
+            }
+        }
+        
+        if(t[0][0] == t[1][1] && t[1][1] == t[2][2]){
+            if(t[0][0] == 'x'){
+                ganado = true;
+                System.out.println("El jugador 1 gana.");
+            } else if(t[0][0] == 'o'){
+                ganado = true;
+                System.out.println("El jugador 2 gana.");
+            }
+        } else if(t[2][0] == t[1][1] && t[1][1] == t[0][2]){
+            if(t[2][0] == 'x'){
                     ganado = true;
                     System.out.println("El jugador 1 gana.");
-                } else if(t[0][0] == 'o'){
+                } else if(t[2][0] == 'o'){
                     ganado = true;
                     System.out.println("El jugador 2 gana.");
                 }
-            } else if(t[2][0] == t[1][1] && t[1][1] == t[0][2]){
-                if(t[2][0] == 'x'){
-                        ganado = true;
-                        System.out.println("El jugador 1 gana.");
-                    } else if(t[2][0] == 'o'){
-                        ganado = true;
-                        System.out.println("El jugador 2 gana.");
-                    }
-            }
         }
         return ganado;
     }
