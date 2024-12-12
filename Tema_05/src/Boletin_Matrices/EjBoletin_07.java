@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package Clase;
+package Boletin_Matrices;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -68,7 +68,7 @@ public class EjBoletin_07 {
         int[][] m = new int[6][6];
         int cont = 0;
         for(int i = 0; i < m.length; i++){
-            while(cont != 6){
+            while(cont != m[i].length){
                 int random = (int) (Math.random()*max+1);
                 if(random >= min){
                     m[i][cont] = random;
@@ -81,9 +81,7 @@ public class EjBoletin_07 {
     }
     
     public static int[] filaDeArrayBiInt(int[][] m, int f){
-        int[] fila = new int[m[f].length];
-        System.arraycopy(m[f], 0, fila, 0, m[f].length);
-        return fila;
+        return m[f];
     }
     
     public static int[] columnaDeArrayBiInt(int[][] m, int c){
@@ -114,11 +112,11 @@ public class EjBoletin_07 {
     
     public static boolean esPuntoDeSilla(int[][] m, int n){
         boolean ePS = true;
+        int min = n, max = n;
         int[] coordenadas = coordenadasDeArrayBiInt(m, n);
         int[] fila = filaDeArrayBiInt(m, coordenadas[0]);
         int[] columna = columnaDeArrayBiInt(m, coordenadas[1]);
         
-        int min = n, max = n;
         for(int i = 0; i < fila.length; i++){
             if(fila[i] < min){
                 ePS = false;
