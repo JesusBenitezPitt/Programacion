@@ -14,7 +14,7 @@ public class EjBoletin_10 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[][] m = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] m = {{1, 2, 3}, {4, 5, 6}};
         System.out.println("Matriz original:");
         mostrarMatriz(m);
         System.out.println("Matriz Traspuesta:");
