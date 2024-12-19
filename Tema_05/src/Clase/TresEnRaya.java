@@ -21,17 +21,18 @@ public class TresEnRaya {
                                        {'·', '·', '·'},
                                        {'·', '·', '·'}};
         
+        char[] simbolos = { 'a', 'b' };
         boolean partidaFinalizada = false;
         mostrarTablero(tablero);
         while(!partidaFinalizada){
-            movimientoJugador1(tablero, sc, 'x');
+            movimientoJugador(tablero, sc, simbolos[0], simbolos);
             mostrarTablero(tablero);
-            if(verificarGanador(tablero) || tableroLleno(tablero)){
+            if(verificarGanador(tablero, simbolos) || tableroLleno(tablero)){
                 partidaFinalizada = true;
             } else {
-                movimientoJugador2(tablero, sc, 'o');
+                movimientoJugador(tablero, sc, simbolos[1], simbolos);
                 mostrarTablero(tablero);
-                if(verificarGanador(tablero) || tableroLleno(tablero)){
+                if(verificarGanador(tablero, simbolos) || tableroLleno(tablero)){
                     partidaFinalizada = true;
                 }
             }
@@ -54,30 +55,14 @@ public class TresEnRaya {
         return movimientoValido;
     }
     
-    public static void movimientoJugador1(char[][] t, Scanner sc, char s){
+    public static void movimientoJugador(char[][] t, Scanner sc, char s, char[] sim){
         int[] posicion = new int[2];
         boolean valido;
-        System.out.println("Jugador 1");
-        do{
-            valido = true;
-            System.out.print("Elige la fila: ");
-            posicion[0] = sc.nextInt();
-            System.out.print("Elige la columna: ");
-            posicion[1] = sc.nextInt();
-
-            if(comprobarMovimiento(t, posicion)){
-                t[posicion[0]][posicion[1]] = s;
-            } else {
-                System.out.println("Movimiento no valido, vuelvelo a intentar");
-                valido = false;
-            }
-        }while(!valido);
-    }
-    
-    public static void movimientoJugador2(char[][] t, Scanner sc, char s){
-        int[] posicion = new int[2];
-        boolean valido;
-        System.out.println("Jugador 2");
+        if(s == sim[0]){
+            System.out.println("Jugador 1");
+        } else if(s == sim[1]){
+            System.out.println("Jugador 2");
+        }
         do{
             valido = true;
             System.out.print("Elige la fila: ");
@@ -106,14 +91,14 @@ public class TresEnRaya {
         return lleno;
     }
     
-    public static boolean verificarGanador(char[][] t){
+    public static boolean verificarGanador(char[][] t, char[] sim){
         boolean ganado = false;
         for(int i = 0; i < 3 && !ganado; i++){
             if(t[i][0] == t[i][1] && t[i][1] == t[i][2]){
-                if(t[i][0] == 'x'){
+                if(t[i][0] == sim[0]){
                     ganado = true;
                     System.out.println("El jugador 1 gana.");
-                } else if(t[i][0] == 'o'){
+                } else if(t[i][0] == sim[1]){
                     ganado = true;
                     System.out.println("El jugador 2 gana.");
                 }
@@ -122,10 +107,10 @@ public class TresEnRaya {
         
         for(int i = 0; i < 3 && !ganado; i++){
             if(t[0][i] == t[1][i] && t[1][i] == t[2][i]){
-                if(t[0][i] == 'x'){
+                if(t[0][i] == sim[0]){
                     ganado = true;
                     System.out.println("El jugador 1 gana.");
-                } else if(t[0][i] == 'o'){
+                } else if(t[0][i] == sim[1]){
                     ganado = true;
                     System.out.println("El jugador 2 gana.");
                 }
@@ -133,18 +118,18 @@ public class TresEnRaya {
         }
         
         if(t[0][0] == t[1][1] && t[1][1] == t[2][2]){
-            if(t[0][0] == 'x'){
+            if(t[0][0] == sim[0]){
                 ganado = true;
                 System.out.println("El jugador 1 gana.");
-            } else if(t[0][0] == 'o'){
+            } else if(t[0][0] == sim[1]){
                 ganado = true;
                 System.out.println("El jugador 2 gana.");
             }
         } else if(t[2][0] == t[1][1] && t[1][1] == t[0][2]){
-            if(t[2][0] == 'x'){
+            if(t[2][0] == sim[0]){
                     ganado = true;
                     System.out.println("El jugador 1 gana.");
-                } else if(t[2][0] == 'o'){
+                } else if(t[2][0] == sim[1]){
                     ganado = true;
                     System.out.println("El jugador 2 gana.");
                 }
