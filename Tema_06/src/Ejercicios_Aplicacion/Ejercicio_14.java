@@ -54,6 +54,7 @@ public class Ejercicio_14 {
             if(agenda.length == 0){
                 agenda = Arrays.copyOf(agenda, agenda.length+1);
                 agenda[agenda.length-1] = nombre + ":" + telefono;
+                System.out.println("Contacto añadido.");
             } else {
                 for(int i = 0; i < agenda.length && !duplicado; i++){
                     if(agenda[i].equals(nombre + ":" + telefono)){
@@ -64,8 +65,8 @@ public class Ejercicio_14 {
                     System.out.println("Este contacto ya esta registrado.");
                 } else {
                     agenda = Arrays.copyOf(agenda, agenda.length+1);
-                        agenda[agenda.length-1] = nombre + ":" + telefono;
-                        System.out.println("Contacto añadido.");
+                    agenda[agenda.length-1] = nombre + ":" + telefono;
+                    System.out.println("Contacto añadido.");
                 }
             }
         }while(duplicado);
@@ -89,7 +90,7 @@ public class Ejercicio_14 {
         } else {
             String[] contacto = agenda[pos].split(":");
             String telefono = contacto[1];
-            System.out.println("El telefono del contacto " + nombre + " es:" + telefono);
+            System.out.println("El telefono del contacto " + nombre + " es: " + telefono);
         }
     }
 
