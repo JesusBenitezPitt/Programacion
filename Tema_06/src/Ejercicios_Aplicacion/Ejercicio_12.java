@@ -87,10 +87,10 @@ public class Ejercicio_12 {
                 System.out.println(muñeco[1][0] + "" + muñeco[0][1] + "" + muñeco[0][2] + "\n" + muñeco[0][0] + "\n" + muñeco[2][0]);
             }
             case 3 -> {
-                System.out.println(muñeco[1][0] + "" +  muñeco[0][1] + "" +  muñeco[0][2] + "\n" + muñeco[0][0] + " " + muñeco[1][2] + "\n" + muñeco[2][0]);
+                System.out.println(muñeco[1][0] + "" + muñeco[0][1] + "" + muñeco[0][2] + "\n" + muñeco[0][0] + " " + muñeco[1][2] + "\n" + muñeco[2][0]);
             }
             case 2 -> {
-                System.out.println(muñeco[1][0] + "" +  muñeco[0][1] + "" +  muñeco[0][2] + "\n" + muñeco[0][0] + " " + muñeco[1][2] + "\n" + muñeco[2][0] + " " + muñeco[2][1]);
+                System.out.println(muñeco[1][0] + "" + muñeco[0][1] + "" + muñeco[0][2] + "\n" + muñeco[0][0] + " " + muñeco[1][2] + "\n" + muñeco[2][0] + " " + muñeco[2][1]);
             }
             case 1 -> {
                 System.out.println(muñeco[1][0] + "" + muñeco[0][1] + "" + muñeco[0][2] + "\n" + muñeco[0][0] + "" + muñeco[1][1] + "" + muñeco[1][2] + "" + muñeco[1][3] + "\n" + muñeco[2][0] + " " + muñeco[2][1]);
