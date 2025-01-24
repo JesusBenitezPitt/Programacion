@@ -10,23 +10,32 @@ package Ejercicios_Resueltos;
  */
 public class CuentaCorriente {
         String dni;
-        String titular;
-        double saldo;
+        public String titular;
+        private double saldo;
+        static private String nombre_banco = "International Java Bank";
 
         CuentaCorriente(String dni, String titular){
-            this.dni = dni;
-            this.titular = titular;
-            this.saldo = 0;
+            this(dni, titular, 0);
+        }
+        
+        CuentaCorriente(String dni, double saldo){
+            this(dni, "Sin Asignar", saldo);
         }
 
+        CuentaCorriente(String dni, String titular, double saldo){
+            this.dni = dni;
+            this.titular = titular;
+            this.saldo = saldo;
+        }
+        
         boolean SacarDinero(double cantidad){
             boolean operacionPosible;
             if(saldo >= cantidad){
                 saldo -= cantidad;
                 operacionPosible = true;
             } else {
-            System.out.println("No hay saldo suficiente.");
-            operacionPosible = false;
+                System.out.println("No hay saldo suficiente.");
+                operacionPosible = false;
             }
             return (operacionPosible);
         }
@@ -39,5 +48,14 @@ public class CuentaCorriente {
             System.out.println("Nombre: " + titular);
             System.out.println("DNI: " + dni);
             System.out.println("Saldo: " + saldo + " euros.");
+            System.out.println("Banco: " + getBanco());
+        }
+        
+        static void setBanco(String nuevonombre){
+            nombre_banco = nuevonombre;
+        }
+        
+        static String getBanco(){
+            return nombre_banco;
         }
     }
