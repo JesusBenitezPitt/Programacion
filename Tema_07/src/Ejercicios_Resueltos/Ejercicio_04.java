@@ -14,8 +14,9 @@ public class Ejercicio_04 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        CuentaCorriente c = new CuentaCorriente("12345678A", "Pepe");
-        CuentaCorriente c2 = new CuentaCorriente("12345678B", "Roberto");
+         CuentaCorriente c, c2;
+        c = new CuentaCorriente("12345678A", "Pepe");
+        c2 = new CuentaCorriente("12345678B", "Roberto");
         c.mostrarInformacion();
         c2.mostrarInformacion();
         CuentaCorriente.setBanco("Banco Central");

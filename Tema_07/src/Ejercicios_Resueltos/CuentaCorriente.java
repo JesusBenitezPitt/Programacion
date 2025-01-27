@@ -13,6 +13,7 @@ public class CuentaCorriente {
         public String titular;
         private double saldo;
         static private String nombre_banco = "International Java Bank";
+        Gestor gestor;
 
         CuentaCorriente(String dni, String titular){
             this(dni, titular, 0);
@@ -20,6 +21,15 @@ public class CuentaCorriente {
         
         CuentaCorriente(String dni, double saldo){
             this(dni, "Sin Asignar", saldo);
+        }
+        
+        CuentaCorriente(String dni, String titular, Gestor gestor){
+            this(dni, titular);
+            this.gestor = gestor;
+        }
+        
+        void setGestor(Gestor gestor){
+            this.gestor = gestor;
         }
 
         CuentaCorriente(String dni, String titular, double saldo){
@@ -45,10 +55,17 @@ public class CuentaCorriente {
         }
         
         void mostrarInformacion(){
+            System.out.println("Informacion de la cuenta:");
             System.out.println("Nombre: " + titular);
             System.out.println("DNI: " + dni);
             System.out.println("Saldo: " + saldo + " euros.");
             System.out.println("Banco: " + getBanco());
+            if(gestor == null){
+                System.out.println("No hay ningun gestor asignado a esta cuenta.");
+            } else {
+                System.out.println("Informacion del gestor:");
+                gestor.mostrarInformacion();
+            }
         }
         
         static void setBanco(String nuevonombre){
