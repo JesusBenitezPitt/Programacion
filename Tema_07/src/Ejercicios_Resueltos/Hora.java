@@ -42,10 +42,10 @@ public class Hora {
     }
     
     public void setSegundo(int segundo){
-        if(0 <= minuto && minuto <= 59){
-            this.minuto = (byte) minuto;
+        if(0 <= segundo && segundo <= 59){
+            this.segundo = (byte) segundo;
         } else {
-            this.minuto = 0;
+            this.segundo = 0;
         }
     }
     
