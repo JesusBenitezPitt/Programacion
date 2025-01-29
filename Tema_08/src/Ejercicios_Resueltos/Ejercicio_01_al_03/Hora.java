@@ -9,24 +9,24 @@ package Ejercicios_Resueltos.Ejercicio_01_al_03;
  * @author usuario
  */
 public class Hora {
-    int hora, minuto;
+    int hora, minutos;
     
-    public Hora(int hora, int minuto){
+    public Hora(int hora, int minutos){
         this.hora = 0;
-        this.minuto = 0;
+        this.minutos = 0;
         if(!setHoras(hora)){
             System.out.println("La hora no es correcta.");
         }
-        if(!setMinutos(minuto)){
+        if(!setMinutos(minutos)){
             System.out.println("Los minutos no son correctos.");
         }
     }
     
     void inc(){
-        minuto++;
-        if(minuto > 59){
+        minutos++;
+        if(minutos > 59){
             hora++;
-            minuto = 0;
+            minutos = 0;
             if(hora > 23){
                 hora = 0;
             }
@@ -36,7 +36,7 @@ public class Hora {
     boolean setMinutos(int min){
         boolean correcto = false;
         if(0 <= min && min < 60){
-            this.minuto = min;
+            this.minutos = min;
             correcto = true;
         }
         return correcto;
@@ -54,7 +54,7 @@ public class Hora {
     @Override
     public String toString() {
         String result;
-        result = hora + ":" + minuto;
+        result = hora + ":" + minutos;
         return result;
     }
 }
