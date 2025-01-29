@@ -2,25 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package Ejercicios_Resueltos;
+package Ejercicios_Resueltos.Ejercicio_01_al_05;
 
 /**
  *
  * @author usuario
  */
-public class Ejercicio_07 {
+public class Ejercicio_03 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Texto t = new Texto(5);
-        t.añadirPrincipio("Ho");
-        t.añadirPrincipio(";");
-        t.añadirFinal("la");
-        t.añadirFinal("X");
-        t.mostrar();
-        System.out.println("Numero de vocales: " + t.numVocales());
+        CuentaCorriente c = new CuentaCorriente("12345678A", "Pepe");
+        c.dni = "12345678-A";
+        c.titular = "Roberto";
     }
     
 }
