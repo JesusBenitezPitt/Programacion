@@ -6,7 +6,7 @@ package Ejercicios_Resueltos.Ejercicio_01_al_03;
 
 /**
  *
- * @author jesus
+ * @author usuario
  */
 public class HoraExacta extends Hora {
     protected int segundos;
