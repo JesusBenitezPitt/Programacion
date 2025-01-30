@@ -17,6 +17,17 @@ public class Lista {
         tabla = new Integer[0];
     }
     
+    public static Lista concatena(Lista lista1, Lista lista2){
+        Lista resultado = new Lista();
+        for(Integer e : lista1.tabla){
+            resultado.insertarFinal(e);
+        }
+        for(Integer e : lista2.tabla){
+            resultado.insertarFinal(e);
+        }
+        return resultado;
+    }
+    
     public int numeroElementos(){
         return tabla.length;
     }
