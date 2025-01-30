@@ -18,11 +18,11 @@ public class Ejercicio_09 {
         b1 = new Bombilla();
         b2 = new Bombilla();
         b1.encender();
-        System.out.println("b2: " + b2.mostrarEstado());
         System.out.println("b1: " + b1.mostrarEstado());
+        System.out.println("b2: " + b2.mostrarEstado());
         b2.encender();
-        System.out.println("b2: " + b2.mostrarEstado());
         System.out.println("b1: " + b1.mostrarEstado());
+        System.out.println("b2: " + b2.mostrarEstado());
         Bombilla.interruptorGeneral = false;
         System.out.println("b1: " + b1.mostrarEstado());
         System.out.println("b2: " + b2.mostrarEstado());
