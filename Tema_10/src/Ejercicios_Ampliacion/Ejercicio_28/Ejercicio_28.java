@@ -26,6 +26,8 @@ public class Ejercicio_28 {
             while(linea != null && !cadenaEncontrada){
                 num_linea++;
                 if(linea.contains(cadena)){
+                    System.out.println("Cadena " + cadena + " encontrada en la linea " + num_linea);
+                    cadenaEncontrada = true;
                 }
             }
         } catch(IOException e){
