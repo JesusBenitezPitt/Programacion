@@ -4,11 +4,13 @@
  */
 package Ejercicios_Clase.Libro;
 
+import java.io.Serializable;
+
 /**
  *
  * @author usuario
  */
-public class Libro {
+public class Libro implements Serializable{
     protected int id;
     protected String titulo;
     protected String autor;
