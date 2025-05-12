@@ -5,6 +5,7 @@
 package Ejercicios_Ampliacion.Ejercicio_31;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Cliente implements Comparable<Cliente> {
     String DNI;
@@ -15,7 +16,8 @@ public class Cliente implements Comparable<Cliente> {
     public Cliente(String DNI, String nombre_completo, String fecha_nacimiento, String saldo){
         this.DNI = DNI;
         this.nombre_completo = nombre_completo;
-        this.fecha_nacimiento = LocalDate.parse(fecha_nacimiento);
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        this.fecha_nacimiento = LocalDate.parse(fecha_nacimiento, f);
         this.saldo = Double.parseDouble(saldo);
     }
     

@@ -4,7 +4,6 @@
  */
 package Ejercicios_Aplicacion.Ejercicio_22;
 
-import Ejercicios_Aplicacion.Ejercicio_20.Cliente;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;

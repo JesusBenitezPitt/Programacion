@@ -54,7 +54,7 @@ public class ListaClientes {
         }while(DNI_existente);
         System.out.print("Introduce el nombre del cliente: ");
         String nombre = sc.next();
-        System.out.print("Introduce la fecha de nacimiento del cliente (aaaa-mm-dd): ");
+        System.out.print("Introduce la fecha de nacimiento del cliente: ");
         String fecha_nacimiento = sc.next();
         System.out.print("Introduce el saldo del cliente: ");
         String saldo = sc.next();
