@@ -12,8 +12,10 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Comparator;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -105,8 +107,7 @@ public class MapaSocios implements Serializable {
     public void listarPorAntiguedad(){
         Comparator<Socio> antiguedad = (Socio s1, Socio  s2) -> Integer.compare(s1.getFecha_ingreso().getYear(), s2.getFecha_ingreso().getYear());
         Collection<Socio> socios = mapa_socios.values();
-        List<Socio> ls = null;
-        ls.addAll(socios);
+        List<Socio> ls = new ArrayList<>(socios);
         Collections.sort(ls, antiguedad);
         for(Socio s : ls){
             System.out.println(s);
@@ -115,15 +116,14 @@ public class MapaSocios implements Serializable {
     
     public void listarPorAltaAnteriorAUnAnoDeterminado(){
         Collection<Socio> socios = mapa_socios.values();
-        List<Socio> ls = null;
-        ls.addAll(socios);
+        List<Socio> ls = new ArrayList<>(socios);
         System.out.print("Introduce el año: ");
         int a = new Scanner(System.in).nextInt();
         for(Socio s : socios){
             if((a - s.getFecha_ingreso().getYear()) >= 1){
                 System.out.println(s);
             }
-        }
+        }  
     }
     
     public void guardarCambios(){

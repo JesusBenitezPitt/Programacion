@@ -4,6 +4,7 @@
  */
 package Ejercicios_Aplicacion.Ejercicio_25;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -50,7 +51,7 @@ public class Socio implements Comparable<Socio> {
 
     @Override
     public String toString() {
-        return "Socio{" + "apodo=" + apodo + ", nombre=" + nombre + ", fecha_ingreso=" + fecha_ingreso + '}';
+        return "Apodo: " + apodo + ", Nombre: " + nombre + ", Fecha_ingreso: " + fecha_ingreso;
     }
     
     @Override
